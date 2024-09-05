@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+  <script type="module" src="availableFunctions.js"></script>
+  <script type="module">
+    import { evaluateFormula } from "./index.js";
+    window.evaluateFormula = evaluateFormula;
+  </script>
+</head>
+<body>
+  <main class="container">
+    <h1>FParser Test</h1>
+    <div style="display: flex; gap: 1rem; width: 100%; max-width: 100%;">
+      <!-- FORMULA -->
+      <div style="flex-grow: 1; display: flex; flex-direction: column; width: 100%;">
+        <div>
+          <fieldset>
+            <legend>Formula</legend>
+            <div>
+              <textarea type="text" id="formula" style="width: 100%;" rows="12"></textarea>
+              <small id="result"></small>
+            </div>
+          </fieldset>
+        </div>
+      
+        <div class="variables">
+          <form id="formVariables">
+            <fieldset>
+              <legend>Variables</legend>
+              <div id="variablesInput"></div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+  
+      <!-- FUNCTIONS -->
+      <div style="flex-grow: 1; width: 100%;">
+        <h2 style="margin: 0 0 1rem 0;">Available functions</h2>
+        <div id="lists"></div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
